@@ -6,6 +6,9 @@
     <title>Data Mining Project - Diabetes Patterns</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 </head>
 <body>
     <header>
@@ -14,14 +17,44 @@
 
     <section id="equipo">
         <h2>Research Team</h2>
-        <div class="miembro">
-            <img src="path_to_image.jpg" alt="Team Member Photo">
-            <div class="descripcion">
-                <h3>Member Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac quam eget enim malesuada accumsan.</p>
+        <div class="team-carousel">
+            <div class="miembro">
+                <img src="path_to_image1.jpg" alt="Team Member Photo">
+                <div class="descripcion">
+                    <h3>Member Name 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac quam eget enim malesuada accumsan.</p>
+                </div>
             </div>
+            <div class="miembro">
+                <img src="path_to_image2.jpg" alt="Team Member Photo">
+                <div class="descripcion">
+                    <h3>Member Name 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac quam eget enim malesuada accumsan.</p>
+                </div>
+            </div>
+            <div class="miembro">
+                <img src="path_to_image1.jpg" alt="Team Member Photo">
+                <div class="descripcion">
+                    <h3>Member Name 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac quam eget enim malesuada accumsan.</p>
+                </div>
+            </div>
+            <div class="miembro">
+                <img src="path_to_image2.jpg" alt="Team Member Photo">
+                <div class="descripcion">
+                    <h3>Member Name 4</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac quam eget enim malesuada accumsan.</p>
+                </div>
+            </div>
+            <div class="miembro">
+                <img src="path_to_image2.jpg" alt="Team Member Photo">
+                <div class="descripcion">
+                    <h3>Member Name 5</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac quam eget enim malesuada accumsan.</p>
+                </div>
+            </div>
+            <!-- Add more members here -->
         </div>
-        <!-- Add more team members here -->
     </section>
 
     <section id="justificacion">
@@ -34,6 +67,23 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula nisi ut sapien laoreet facilisis. Aenean sit amet urna vel metus tristique cursus.</p>
     </section>
 
-    <!-- More sections can be added as the project progresses -->
+    <!-- Include jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Slick Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Initialize Slick Carousel -->
+    <script>
+        $(document).ready(function(){
+            $('.team-carousel').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                arrows: true, // Enable arrows
+                dots: true
+            });
+        });
+    </script>
 </body>
 </html>

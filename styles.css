@@ -80,3 +80,44 @@ section {
         margin: 0 0 10px 0;
     }
 }
+
+/* Estilo para el carrusel */
+.team-carousel {
+    position: relative;
+}
+
+/* Estilos para las flechas */
+.slick-prev,
+.slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: #003366; /* Color de fondo */
+    color: white; /* Color de las flechas */
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 10px; /* Posición horizontal de la flecha izquierda */
+}
+
+.slick-next {
+    right: 10px; /* Posición horizontal de la flecha derecha */
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-family: "Arial", sans-serif;
+    content: "◀"; /* Código para la flecha izquierda */
+}
+
+.slick-next::before {
+    content: "▶"; /* Código para la flecha derecha */
+}
