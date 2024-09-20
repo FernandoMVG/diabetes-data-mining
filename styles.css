@@ -30,7 +30,7 @@ section {
     background-color: #e7f3fe;
     text-align: justify;
 }
-/* o */
+
 #relevancia {
     background-color: #d0e7f8;
     text-align: justify;
@@ -58,8 +58,8 @@ section {
     border-radius: 8px; /* Cambiado de circular a bordes ligeramente redondeados */
     width: 150px; /* Ajusta el tamaño aquí */
     height: 150px; /* Mantén un formato cuadrado */
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 125px;
+    margin-right: 125px;
     object-fit: cover;
     margin-bottom: 15px;
 }
