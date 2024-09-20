@@ -129,3 +129,120 @@ section {
 .slick-next::before {
     content: "▶"; /* Código para la flecha derecha */
 }
+
+/* Estilos específicos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #003366;
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: #003366;
+}
+
+/* Imagenes de data visualization */
+
+section img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Ajusta este valor según el tamaño deseado */
+    display: block;
+    margin: 0 auto 20px; /* Centra las imágenes y añade un margen inferior */
+}
+
+section#data-visualization img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Ajusta este valor según el tamaño deseado */
+    display: block;
+    margin: 0 auto 20px; /* Centra las imágenes y añade un margen inferior */
+}
+
+/* Estilos para las imágenes ampliables */
+/* Estilos para las imágenes ampliables */
+.zoomable {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.zoomable:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para la ampliación en el lugar */
+.zoomable.expanded {
+    transform: scale(2); /* Ajusta el valor según el tamaño deseado */
+    z-index: 1000;
+    position: relative;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,466 @@
+<link rel="stylesheet" href="styles.css">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>role</th>
+      <th>type</th>
+      <th>demographic</th>
+      <th>description</th>
+      <th>units</th>
+      <th>missing_values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>encounter_id</td>
+      <td>ID</td>
+      <td></td>
+      <td>None</td>
+      <td>Unique identifier of an encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>patient_nbr</td>
+      <td>ID</td>
+      <td></td>
+      <td>None</td>
+      <td>Unique identifier of a patient</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>race</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>Race</td>
+      <td>Values: Caucasian, Asian, African American, Hispanic, and other</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>Gender</td>
+      <td>Values: male, female, and unknown/invalid</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>age</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>Age</td>
+      <td>Grouped in 10-year intervals: [0, 10), [10, 20),..., [90, 100)</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>weight</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Weight in pounds.</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>admission_type_id</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Integer identifier corresponding to 9 distinct values, for example, emergency, urgent, elective, newborn, and not available</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>discharge_disposition_id</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Integer identifier corresponding to 29 distinct values, for example, discharged to home, expired, and not available</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>admission_source_id</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Integer identifier corresponding to 21 distinct values, for example, physician referral, emergency room, and transfer from a hospital</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>time_in_hospital</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Integer number of days between admission and discharge</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>payer_code</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Integer identifier corresponding to 23 distinct values, for example, Blue Cross/Blue Shield, Medicare, and self-pay</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>medical_specialty</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Integer identifier of a specialty of the admitting physician, corresponding to 84 distinct values, for example, cardiology, internal medicine, family/general practice, and surgeon</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>num_lab_procedures</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of lab tests performed during the encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>num_procedures</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of procedures (other than lab tests) performed during the encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>num_medications</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of distinct generic names administered during the encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>number_outpatient</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of outpatient visits of the patient in the year preceding the encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>number_emergency</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of emergency visits of the patient in the year preceding the encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>number_inpatient</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of inpatient visits of the patient in the year preceding the encounter</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>diag_1</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The primary diagnosis (coded as first three digits of ICD9); 848 distinct values</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>diag_2</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Secondary diagnosis (coded as first three digits of ICD9); 923 distinct values</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>diag_3</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Additional secondary diagnosis (coded as first three digits of ICD9); 954 distinct values</td>
+      <td>None</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>number_diagnoses</td>
+      <td>Feature</td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Number of diagnoses entered to the system</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>max_glu_serum</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Indicates the range of the result or if the test was not taken. Values: &gt;200, &gt;300, normal, and none if not measured</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>A1Cresult</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Indicates the range of the result or if the test was not taken. Values: &gt;8 if the result was greater than 8%, &gt;7 if the result was greater than 7% but less than 8%, normal if the result was less than 7%, and none if not measured.</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>metformin</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>repaglinide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>nateglinide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>chlorpropamide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>glimepiride</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>acetohexamide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>glipizide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>glyburide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>tolbutamide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>pioglitazone</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>rosiglitazone</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>acarbose</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>miglitol</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>troglitazone</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>tolazamide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>examide</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>citoglipton</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>insulin</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>glyburide-metformin</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>glipizide-metformin</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>glimepiride-pioglitazone</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>metformin-rosiglitazone</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>metformin-pioglitazone</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>The feature indicates whether the drug was prescribed or there was a change in the dosage. Values: up if the dosage was increased during the encounter, down if the dosage was decreased, steady if the dosage did not change, and no if the drug was not prescribed</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>change</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Indicates if there was a change in diabetic medications (either dosage or generic name). Values: change and no change</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>diabetesMed</td>
+      <td>Feature</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Indicates if there was any diabetic medication prescribed. Values: yes and no</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>readmitted</td>
+      <td>Target</td>
+      <td>Categorical</td>
+      <td>None</td>
+      <td>Days to inpatient readmission. Values: &lt;30 if the patient was readmitted in less than 30 days, &gt;30 if the patient was readmitted in more than 30 days, and No for no record of readmission.</td>
+      <td>None</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>

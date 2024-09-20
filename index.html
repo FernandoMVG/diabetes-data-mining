@@ -75,24 +75,123 @@
             Another study, <a href="https://www.researchgate.net/publication/360020262_An_Interpretable_Intelligent_Model_for_Predicting_Readmission_Risk_Features_in_Diabetes_Patients">"An Interpretable Intelligent Model for Predicting Readmission Risk Features in Diabetes Patients"</a>, focused on creating a machine learning model that predicts readmission rates and emphasizes interpretability. It found that the number of inpatient admissions and emergency visits were critical factors in predicting readmissions, highlighting the value of interpretable models in healthcare.
             </p>
     </section>
+    <section id="data-overview">
+        <h2>Data Overview</h2>
+        <iframe src="variables_table.html" width="100%" height="500px" frameborder="0"></iframe>
+        <p> Number of observations: 101766</p>
+        <p> Number of variables: 50</p>
 
-    <!-- Include jQuery first -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include Slick Carousel JS -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- Initialize Slick Carousel -->
-    <script>
-        $(document).ready(function(){
-            $('.team-carousel').slick({
-                infinite: true,
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                autoplay: true,
-                autoplaySpeed: 2000000,
-                arrows: true, // Enable arrows
-                dots: true
-            });
+    </section>
+    <section id="data-overview2">
+        <h2>Missing Values</h2>
+        <iframe src="data_overview_table.html" width="100%" height="500px" frameborder="0"></iframe>
+    </section>
+
+    <section id="data-overview3">
+        <h2>Statical Summary</h2>
+        <iframe src="num_stats_table.html" width="100%" height="450px" frameborder="0"></iframe>
+    </section>
+
+    <section id="data-overview4">
+        <h2>Categorical Variables Summary</h2>
+        <iframe src="cat_summary_table.html" width="100%" height="300px" frameborder="0"></iframe>
+    </section>
+
+    <section id="data-visualization">
+        <h2>Data Visualization</h2>
+      
+        <p>The instances in this dataset represent individual patient records of hospitalized patients diagnosed with diabetes. These records capture patient and hospital outcomes derived from encounters that met specific criteria:</p>
+      
+        <ul>
+          <li><strong>Inpatient encounters:</strong> Hospital admissions with a length of stay between 1 and 14 days.</li>
+          <li><strong>Diabetic encounters:</strong> Cases where diabetes was diagnosed during the hospitalization.</li>
+          <li><strong>Lab and medication administration:</strong> The presence of laboratory tests and medication administration during the encounter.</li>
+        </ul>
+      
+        <h3>Data Attributes</h3>
+      
+        <p>The data encompasses a range of attributes, including:</p>
+      
+        <ul>
+          <li><strong>Patient demographics:</strong> Patient number, race, gender, and age.</li>
+          <li><strong>Admission details:</strong> Admission type, length of stay, and admitting physician's medical specialty.</li>
+          <li><strong>Laboratory information:</strong> Number of lab tests performed and HbA1c test result.</li>
+          <li><strong>Diagnoses:</strong> Primary and secondary diagnoses.</li>
+          <li><strong>Medication data:</strong> Total number of medications, diabetic medications, and medication types.</li>
+          <li><strong>Previous encounters:</strong> Number of outpatient, inpatient, and emergency visits within the year prior to hospitalization.</li>
+        </ul>
+      
+        <p><strong>Note:</strong> The distinction between inpatient and outpatient encounters is clarified: inpatient encounters involve hospitalization for one or more days, while outpatient encounters do not require hospitalization.</p>
+      </section>
+
+      <section>
+        <img class="zoomable" src="Imagenes/age_distribution.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/gender_distribution.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/race-distribution.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/insurance_distribution.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/Time_in_hospital_dist.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/Time_in_hospital_boxdist.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/admission_type_dist.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/discharge_dist.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/discharge_texts.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/medical_speciality-dist.png" alt="Data Visualization">
+        <ul>
+            <li>Number of Laboratory Procedures</li>
+            <li>Number of Medications</li>
+            <li>Number of Procedures</li>
+            <li>Number of Diagnoses</li>
+        </ul>
+        <img class="zoomable" src="Imagenes/Proce_Med_diag.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/Proce_Med_diag_boxdist.png" alt="Data Visualization">
+        <img class="zoomable" src="Imagenes/outpatients_inpatient_visits.png" alt="Data Visualization">
+    </section>
+
+    <section id="data-visualization3">
+        <h2>Clinical Features</h2>
+        <img class="zoomable" src="Imagenes/medication_usage.png" alt="Data Visualization">
+    </section>
+
+    <section id="data-cleaning">
+        <h2>Data Cleaning Process</h2>
+        <p><strong>Setting a threshold:</strong> A value named "threshold" is defined. This value represents the maximum allowable percentage of missing values within a column. If a column exceeds this threshold, it will be removed.</p>
+        <p><strong>Calculating the proportion of missing values:</strong> The proportion of missing values for each column in the dataset is computed. This indicates the percentage of empty values in each column.</p>
+        <p><strong>Removing columns with excessive missing values:</strong> The calculated proportions are compared to the threshold. Columns that surpass the threshold (i.e., have more missing values than allowed) are eliminated from the dataset.</p>
+        <p><strong>Reporting removed columns:</strong> The code displays a list of the columns that have been removed, providing insight into the information lost during the cleaning process.</p>
+    </section>
+
+<!-- Include jQuery first -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Include Slick Carousel JS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- Initialize Slick Carousel -->
+<script>
+    $(document).ready(function(){
+        $('.team-carousel').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true, // Enable arrows
+            dots: true
         });
-    </script>
+
+        // Ampliación en el lugar
+        document.querySelectorAll('.zoomable').forEach(function(img) {
+            img.onclick = function() {
+                this.classList.toggle('expanded');
+            }
+        });
+
+        // Cerrar la imagen ampliada al hacer clic fuera de ella
+        window.onclick = function(event) {
+            if (!event.target.classList.contains('zoomable')) {
+                document.querySelectorAll('.zoomable.expanded').forEach(function(img) {
+                    img.classList.remove('expanded');
+                });
+            }
+        }
+    });
+</script>
 </body>
 </html>
